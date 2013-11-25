@@ -138,9 +138,9 @@
 		1FA4B8C41843A70B00CFD179 /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FA4B8C31843A70B00CFD179 /* vec3.c */; };
 		1FA4B8C61843A70B00CFD179 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FA4B8C51843A70B00CFD179 /* vec4.c */; };
 		1FA4B8CB1843A70B00CFD179 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA4B8CA1843A70B00CFD179 /* main.m */; };
-		1FA4B8DE1843A79A00CFD179 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA4B8DB1843A79A00CFD179 /* AppDelegate.m */; };
-		1FA4B8DF1843A79A00CFD179 /* DetecroreScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA4B8DD1843A79A00CFD179 /* DetecroreScene.m */; };
-		1FA4B8E11843A7B700CFD179 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA4B8E01843A7B700CFD179 /* CoreLocation.framework */; };
+		1FA4B8CE1843A70B00CFD179 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA4B8CD1843A70B00CFD179 /* AppDelegate.m */; };
+		1FA4B8D11843A70B00CFD179 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA4B8D01843A70B00CFD179 /* HelloWorldLayer.m */; };
+		1FA4B8D41843A70B00CFD179 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA4B8D31843A70B00CFD179 /* IntroLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -419,11 +419,12 @@
 		1FA4B8C71843A70B00CFD179 /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_Kazmath.txt; path = libs/LICENSE_Kazmath.txt; sourceTree = "<group>"; };
 		1FA4B8C91843A70B00CFD179 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		1FA4B8CA1843A70B00CFD179 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1FA4B8DA1843A79A00CFD179 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		1FA4B8DB1843A79A00CFD179 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1FA4B8DC1843A79A00CFD179 /* DetecroreScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetecroreScene.h; sourceTree = "<group>"; };
-		1FA4B8DD1843A79A00CFD179 /* DetecroreScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetecroreScene.m; sourceTree = "<group>"; };
-		1FA4B8E01843A7B700CFD179 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1FA4B8CC1843A70B00CFD179 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1FA4B8CD1843A70B00CFD179 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1FA4B8CF1843A70B00CFD179 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
+		1FA4B8D01843A70B00CFD179 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		1FA4B8D21843A70B00CFD179 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
+		1FA4B8D31843A70B00CFD179 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -431,7 +432,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FA4B8E11843A7B700CFD179 /* CoreLocation.framework in Frameworks */,
 				1FA4B72C1843A70900CFD179 /* OpenAL.framework in Frameworks */,
 				1FA4B7321843A70900CFD179 /* UIKit.framework in Frameworks */,
 				1FA4B7281843A70900CFD179 /* QuartzCore.framework in Frameworks */,
@@ -468,7 +468,6 @@
 		1FA4B7261843A70900CFD179 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1FA4B8E01843A7B700CFD179 /* CoreLocation.framework */,
 				1FA4B7271843A70900CFD179 /* QuartzCore.framework */,
 				1FA4B7291843A70900CFD179 /* OpenGLES.framework */,
 				1FA4B72B1843A70900CFD179 /* OpenAL.framework */,
@@ -486,10 +485,12 @@
 		1FA4B73B1843A70900CFD179 /* iBeaconDetectore */ = {
 			isa = PBXGroup;
 			children = (
-				1FA4B8DA1843A79A00CFD179 /* AppDelegate.h */,
-				1FA4B8DB1843A79A00CFD179 /* AppDelegate.m */,
-				1FA4B8DC1843A79A00CFD179 /* DetecroreScene.h */,
-				1FA4B8DD1843A79A00CFD179 /* DetecroreScene.m */,
+				1FA4B8CC1843A70B00CFD179 /* AppDelegate.h */,
+				1FA4B8CD1843A70B00CFD179 /* AppDelegate.m */,
+				1FA4B8CF1843A70B00CFD179 /* HelloWorldLayer.h */,
+				1FA4B8D01843A70B00CFD179 /* HelloWorldLayer.m */,
+				1FA4B8D21843A70B00CFD179 /* IntroLayer.h */,
+				1FA4B8D31843A70B00CFD179 /* IntroLayer.m */,
 				1FA4B73C1843A70900CFD179 /* Resources */,
 				1FA4B7541843A70900CFD179 /* libs */,
 				1FA4B8C81843A70B00CFD179 /* Supporting Files */,
@@ -995,11 +996,11 @@
 				1FA4B8031843A70A00CFD179 /* CCSprite.m in Sources */,
 				1FA4B7AA1843A70A00CFD179 /* CCGrabber.m in Sources */,
 				1FA4B8B41843A70A00CFD179 /* mat3.c in Sources */,
-				1FA4B8DE1843A79A00CFD179 /* AppDelegate.m in Sources */,
+				1FA4B8CE1843A70B00CFD179 /* AppDelegate.m in Sources */,
 				1FA4B83E1843A70A00CFD179 /* CCES2Renderer.m in Sources */,
-				1FA4B8DF1843A79A00CFD179 /* DetecroreScene.m in Sources */,
 				1FA4B7B01843A70A00CFD179 /* CCLabelAtlas.m in Sources */,
 				1FA4B7CC1843A70A00CFD179 /* CCParallaxNode.m in Sources */,
+				1FA4B8D41843A70B00CFD179 /* IntroLayer.m in Sources */,
 				1FA4B7641843A70900CFD179 /* CCActionGrid.m in Sources */,
 				1FA4B7AD1843A70A00CFD179 /* CCGrid.m in Sources */,
 				1FA4B8BC1843A70B00CFD179 /* quaternion.c in Sources */,
@@ -1044,6 +1045,7 @@
 				1FA4B8B21843A70A00CFD179 /* matrix.c in Sources */,
 				1FA4B7981843A70900CFD179 /* CCDrawingPrimitives.m in Sources */,
 				1FA4B8001843A70A00CFD179 /* ccShaders.m in Sources */,
+				1FA4B8D11843A70B00CFD179 /* HelloWorldLayer.m in Sources */,
 				1FA4B8561843A70A00CFD179 /* CCWindow.m in Sources */,
 				1FA4B8341843A70A00CFD179 /* cocos2d.m in Sources */,
 				1FA4B7E11843A70A00CFD179 /* CCProgressTimer.m in Sources */,
@@ -1118,7 +1120,6 @@
 				GCC_PREFIX_HEADER = iBeaconDetectore/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"iBeaconDetectore/libs/kazmath/include\"";
 				INFOPLIST_FILE = iBeaconDetectore/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
@@ -1138,7 +1139,6 @@
 				GCC_PREFIX_HEADER = iBeaconDetectore/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"iBeaconDetectore/libs/kazmath/include\"";
 				INFOPLIST_FILE = iBeaconDetectore/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",

@@ -1,21 +1,19 @@
 //
 //  AppDelegate.h
-//  DetectoreIBeacon
+//  iBeaconDetectore
 //
-//  Created by yasuhisa.arakawa on 2013/11/25.
+//  Created by yasuhisa.arakawa on 2013/11/26.
 //  Copyright Yasuhisa Arakawa 2013年. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "cocos2d.h"
 
-#import <CoreLocation/CoreLocation.h>
-
 // Added only for iOS 6 support
 @interface MyNavigationController : UINavigationController <CCDirectorDelegate>
 @end
 
-@interface AppController : NSObject <UIApplicationDelegate, CLLocationManagerDelegate>
+@interface AppController : NSObject <UIApplicationDelegate>
 {
 	UIWindow *window_;
 	MyNavigationController *navController_;
