@@ -317,7 +317,8 @@ static NSInteger const kParticleTag         = 101;
                                 message:@"Open?"
                                delegate:self
                       cancelButtonTitle:@"No!"
-                      otherButtonTitles:@"Yes!!", nil] show];}
+                      otherButtonTitles:@"Yes!!", nil] show];
+}
 
 - (void)gameComplete
 {
