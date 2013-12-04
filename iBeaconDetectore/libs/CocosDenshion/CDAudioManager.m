@@ -317,10 +317,10 @@ static BOOL configured = FALSE;
 }
 
 -(BOOL) isOtherAudioPlaying {
-	UInt32 isPlaying = 0;
-	UInt32 varSize = sizeof(isPlaying);
-	AudioSessionGetProperty (kAudioSessionProperty_OtherAudioIsPlaying, &varSize, &isPlaying);
-	return (isPlaying != 0);
+//	UInt32 isPlaying = 0;
+//	UInt32 varSize = sizeof(isPlaying);
+//	AudioSessionGetProperty (kAudioSessionProperty_OtherAudioIsPlaying, &varSize, &isPlaying);
+	return ([[AVAudioSession sharedInstance] isOtherAudioPlaying]);
 }
 
 -(void) setMode:(tAudioManagerMode) mode {
@@ -398,8 +398,9 @@ static BOOL configured = FALSE;
 	if ((self = [super init])) {
 
 		//Initialise the audio session
-		AVAudioSession* session = [AVAudioSession sharedInstance];
-		session.delegate = self;
+        [[AVAudioSession sharedInstance] setActive:YES error:nil];
+		// AVAudioSession* session = [AVAudioSession sharedInstance];
+		// session.delegate = self;
 
 		_mode = mode;
 		backgroundMusicCompletionSelector = nil;
@@ -473,14 +474,14 @@ static BOOL configured = FALSE;
 	//Calling audio route stuff on the simulator causes problems
 	return NO;
 #else
-	CFStringRef newAudioRoute;
-	UInt32 propertySize = sizeof (CFStringRef);
+	CFStringRef newAudioRoute = [[AVAudioSession sharedInstance] isOtherAudioPlaying];
+//	UInt32 propertySize = sizeof (CFStringRef);
 
-	AudioSessionGetProperty (
-							 kAudioSessionProperty_AudioRoute,
-							 &propertySize,
-							 &newAudioRoute
-							 );
+//	AudioSessionGetProperty (
+//							 kAudioSessionProperty_AudioRoute,
+//							 &propertySize,
+//							 &newAudioRoute
+//							 );
 
 	if (newAudioRoute == NULL) {
 		//Don't expect this to happen but playing safe otherwise a null in the CFStringCompare will cause a crash

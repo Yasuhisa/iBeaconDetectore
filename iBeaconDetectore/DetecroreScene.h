@@ -11,11 +11,11 @@
 
 #import <CoreLocation/CoreLocation.h>
 
-@interface DetecroreScene : CCLayer <CLLocationManagerDelegate> {
-    CLLocationManager *locationManager_;
-    NSUUID *proximityUUID_;
-    CLBeaconRegion *beaconRegion_;
-}
+@interface DetecroreScene : CCLayer <CLLocationManagerDelegate, UIAlertViewDelegate>
+
+@property (nonatomic, assign) CLLocationManager *locationManager_;
+@property (nonatomic, assign) NSUUID *proximityUUID_;
+@property (nonatomic, assign) CLBeaconRegion *beaconRegion_;
 
 +(CCScene *) scene;
 

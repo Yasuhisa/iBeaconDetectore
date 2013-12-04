@@ -141,6 +141,7 @@
 		1FA4B8DE1843A79A00CFD179 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA4B8DB1843A79A00CFD179 /* AppDelegate.m */; };
 		1FA4B8DF1843A79A00CFD179 /* DetecroreScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA4B8DD1843A79A00CFD179 /* DetecroreScene.m */; };
 		1FA4B8E11843A7B700CFD179 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA4B8E01843A7B700CFD179 /* CoreLocation.framework */; };
+		1FBA084B184DAAE90016F97C /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FBA084A184DAAE90016F97C /* fire.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -424,6 +425,7 @@
 		1FA4B8DC1843A79A00CFD179 /* DetecroreScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetecroreScene.h; sourceTree = "<group>"; };
 		1FA4B8DD1843A79A00CFD179 /* DetecroreScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetecroreScene.m; sourceTree = "<group>"; };
 		1FA4B8E01843A7B700CFD179 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1FBA084A184DAAE90016F97C /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -500,6 +502,7 @@
 		1FA4B73C1843A70900CFD179 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1FBA0847184DAA7A0016F97C /* cocos2dParticleFile */,
 				1FA4B73D1843A70900CFD179 /* Default.png */,
 				1FA4B73F1843A70900CFD179 /* Default@2x.png */,
 				1FA4B7411843A70900CFD179 /* Default-568h@2x.png */,
@@ -878,6 +881,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1FBA0847184DAA7A0016F97C /* cocos2dParticleFile */ = {
+			isa = PBXGroup;
+			children = (
+				1FBA084A184DAAE90016F97C /* fire.png */,
+			);
+			name = cocos2dParticleFile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -929,6 +940,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FBA084B184DAAE90016F97C /* fire.png in Resources */,
 				1FA4B74E1843A70900CFD179 /* Icon.png in Resources */,
 				1FA4B8AC1843A70A00CFD179 /* ChangeLog in Resources */,
 				1FA4B7401843A70900CFD179 /* Default@2x.png in Resources */,
@@ -1125,6 +1137,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4F7F475B-3050-4EAA-BFEF-110D8A9B3C21";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1145,6 +1158,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4F7F475B-3050-4EAA-BFEF-110D8A9B3C21";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1169,6 +1183,7 @@
 				1FA4B8D91843A70B00CFD179 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
