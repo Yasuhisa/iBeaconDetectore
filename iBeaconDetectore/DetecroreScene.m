@@ -138,23 +138,18 @@ static NSInteger const kParticleTag         = 101;
         // 最も測定距離の近いBeaconを取得
         CLBeacon *nearestBeacon = beacons.firstObject;
         
-        // 端末とBeaconとの距離間を大まかに測定
-        float distance = 1.0f;
-        if (1 - nearestBeacon.accuracy > 0) {
-            distance = distance - nearestBeacon.accuracy;
-            CCLOG(@"%f", distance);
-        }
+        float distance = 1.0f / nearestBeacon.accuracy;
         
         switch (nearestBeacon.proximity) {
             case CLProximityImmediate: {
                 stayCount_++;
                 missCount_ = 0;
                 
-                [self showParticleWithEmmisionRate:1000 * distance speed:500 * distance];
+                [self showParticleWithEmmisionRate:300 * distance speed:100 * distance];
                 [labelDescription_ setString:@"Treasure is hear!!"];
                 
-                // 電波強度のブレでクリア判定にいかないためにstayCountとdistanceで判定
-                if (distance > 0.95) {
+                // 電波強度のブレでクリア判定にいかないためにstayCountとaccuracyで判定
+                if (nearestBeacon.accuracy < 0.2f) { // （20cm未満まで接近したらTreasure Get）
                     [labelDescription_ setString:@"Find Treasure!!"];
                     
                     if (stayCount_ > 3) {
@@ -184,7 +179,7 @@ static NSInteger const kParticleTag         = 101;
             case CLProximityNear: {
                 stayCount_ = 0;
                 missCount_ = 0;
-                [self showParticleWithEmmisionRate:200 * distance speed:300 * distance];
+                [self showParticleWithEmmisionRate:200 * distance speed:100 * distance];
                 
                 [labelDescription_ setString:@"Treasure is near!"];
                 [labelBeaconName_ setString:@""];
@@ -195,7 +190,7 @@ static NSInteger const kParticleTag         = 101;
             case CLProximityFar: {
                 stayCount_ = 0;
                 missCount_ = 0;
-                [self showParticleWithEmmisionRate:20 * distance speed:10 * distance];
+                [self showParticleWithEmmisionRate:100 * distance speed:80 * distance];
                 
                 [labelDescription_ setString:@"Treasure is far."];
                 [labelBeaconName_ setString:@""];
