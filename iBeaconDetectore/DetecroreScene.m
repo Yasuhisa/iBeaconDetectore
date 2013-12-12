@@ -116,13 +116,13 @@ static NSInteger const kParticleTag         = 101;
         /*
          複数台のBeaconからの距離を測定したい場合はここに処理を記述（距離が近い順にソートされている）
          注）Bluetooth Low Energyの電波強度でBeaconを検知しているため、
-         環境次第（Beaconの配置の仕方や電波障害等）では正確な距離順にはならない
+         環境次第（Beaconの配置の仕方や電波障害等）では正確な距離順にはならない可能性がある
          */
     // }
     
     
     /*
-     Ranging再スタート時に限り、初回のみどこから測定してもCLProximityImmediateに必ずなってしまうため初回は測定しない。
+     Ranging再スタート時、ブレが発生しやすいので初回のモニタリングは行わない。
      */
     if (isFirstRanging) {
         
@@ -149,7 +149,7 @@ static NSInteger const kParticleTag         = 101;
                 [labelDescription_ setString:@"Treasure is hear!!"];
                 
                 // 電波強度のブレでクリア判定にいかないためにstayCountとaccuracyで判定
-                if (nearestBeacon.accuracy < 0.2f) { // （20cm未満まで接近したらTreasure Get）
+                if (nearestBeacon.accuracy < 0.15f) { // （15cm未満まで接近したらTreasure Get）
                     [labelDescription_ setString:@"Find Treasure!!"];
                     
                     if (stayCount_ > 3) {
