@@ -13,9 +13,9 @@
 
 @interface DetecroreScene : CCLayer <CLLocationManagerDelegate, UIAlertViewDelegate>
 
-@property (nonatomic, assign) CLLocationManager *locationManager_;
-@property (nonatomic, assign) NSUUID *proximityUUID_;
-@property (nonatomic, assign) CLBeaconRegion *beaconRegion_;
+@property (nonatomic, strong) CLLocationManager *locationManager_;
+@property (nonatomic, strong) NSUUID *proximityUUID_;
+@property (nonatomic, strong) CLBeaconRegion *beaconRegion_;
 
 +(CCScene *) scene;
 
